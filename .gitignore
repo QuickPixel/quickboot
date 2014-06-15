@@ -15,7 +15,7 @@
 *.vi
 
 
-# OS, VCS, OR FOLDER SPECIFIC IGNORES
+# OS & VCS IGNORES
 !.gitignore
 !.gitkeep
 ._*
@@ -34,16 +34,11 @@ nbproject
 Gemfile.lock
 
 
-# NPM & BOWER
-node_modules/*
-!node_modules/.gitkeep
+# PACKAGE MANAGER CRUFT
+/node_modules
 compile/vendor/*
 !compile/vendor/.gitkeep
 
 
-# IGNORE PROJECT-SPECIFIC CONFIG/SETTINGS
-dist/*
-public/*
-# !public/.gitkeep
-# public/.htaccess
-# public/htusers
+# IGNORE PROJECT-SPECIFIC FILES
+/public
