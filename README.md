@@ -141,3 +141,5 @@ Information regarding how Bower is configured and its components for this projec
 * [Jake Chapman](http://imjakechapman.com/)
 	* [CraftCMS Boilerplate](https://github.com/imjakechapman/CraftCMS-Boilerplate)
 * [Jon Thomas](https://github.com/wjthomas9)
+* [Focus Lab, LLC](http://focuslabllc.com/)
+	* [Dev Docs](https://github.com/focuslabllc/dev_docs.ee_addon)
