@@ -22,9 +22,7 @@ QuickBoot is a frontend scaffold.
 ---
 
 ## <a name="project-setup"></a> Project Setup
-* Agree to the .rvmrc request
-* Change the Project name (quickboot) in .rvmrc, close and reopen the terminal window.
-* Agree to the .rvmrc request again
+* Change the Project name (quickboot) in .ruby-gemset, close and reopen the terminal window.
 * Install Node
     * [Node.js Installer](http://nodejs.org/)
 * Install the Gulp
@@ -39,11 +37,12 @@ QuickBoot is a frontend scaffold.
 * Install node modules and bower dependencies
     * ```npm install```
 * Change the Project Name and details in package.json
-* Usage
-  * Create project skeleton before you start: ```gulp skeleton```
-  * Clean project: ```gulp clean```
-  * Watch and start local server: ```gulp watch``` and visit [http://localhost:8080/](http://localhost:8080/)
-  * Build for Production: ```NODE_ENV=production gulp```
+* Run ```gulp```
+* Alternate usage
+  * Create project skeleton: ```gulp skeleton```
+  * Clean project distribution directory (./public): ```gulp clean```
+  * Watch and start local server: ```gulp watch``` then visit [http://localhost:8080/](http://localhost:8080/)
+  * Build for Production to minify and optimize assets: ```NODE_ENV=production gulp```
 
 ---
 

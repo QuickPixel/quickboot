@@ -34,7 +34,8 @@ var gulp              = require( 'gulp' ),
 
     imagemin          = require( 'gulp-imagemin' ),
     pngcrush          = require( 'imagemin-pngcrush' ),
-    svgmin            = require( 'gulp-svgmin' );
+    svgmin            = require( 'gulp-svgmin' ),
+    svgSprites        = require( 'gulp-svg-sprites' );
 
 
 // Variables

@@ -27,6 +27,7 @@
     "gulp-rename": "^1.2.0",
     "gulp-sass": "^0.7.1",
     "gulp-scsslint": "0.0.4",
+    "gulp-svg-sprites": "^0.1.2",
     "gulp-svgmin": "^0.4.6",
     "gulp-uglify": "^0.3.0",
     "gulp-uncss": "^0.4.4",
