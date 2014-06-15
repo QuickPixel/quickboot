@@ -1,0 +1,128 @@
+// =============================================================================
+// TITLE:       Mixins
+// DESCRIPTION: Mixins used throughout the project
+//
+// TODO:
+//       Clean this up and remove old mixins and refactor
+// =============================================================================
+
+// Design Effects
+// ----------------------
+// Emboss
+// .box { @include box-emboss(0.8, 0.05); }
+@mixin box-emboss($opacity, $opacity2){
+  box-shadow:white($opacity) 0 1px 0, inset black($opacity2) 0 1px 0;
+}
+
+// Letterpress
+// .text { @include letterpress(0.8); }
+@mixin letterpress($opacity) {
+  text-shadow: white($opacity) 0 1px 0;
+}
+
+// Mixin for a page wrapper... why not?
+@mixin wrap($min: 60em, $max: 80em) {
+  margin: 0 auto;
+  min-width: $min;
+  max-width: $max;
+}
+
+// Buttons
+@mixin button($font_color: white, $border_color: #ebebeb, $bg_color: rgb(240,240,240), $font_size: 1.6, $padding: 0.5em, $radius: 5px) {
+  @include box-shadow(0 2px 0px 0px $clr_primary_shadow);
+  @include transition(all .1s ease-in-out);
+  @include font-size($font_size);
+
+  position: relative;
+  display: inline-block;
+  padding: $padding;
+  border: 1px solid $border_color;
+  border-radius: $radius;
+  color: $font_color;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  background-color: $bg_color;
+}
+
+@mixin base_margin($top: 0, $right: 0, $bottom: 0, $left: 0) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin reset_all {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+}
+
+@mixin reset_list($margin: 0, $padding: 0, $list_style: none ) {
+  margin: $margin;
+  padding: $padding;
+  list-style-type: $list_style;
+}
+
+@mixin reset_link {
+  border-width: 0;
+  text-decoration: none;
+}
+
+// HEADINGS: Auto generate heading elements
+// USAGE: @include set_heading_size(1, 6, 40, 4)
+// -----------------------------------------------------------------------------
+@mixin set_heading_size($from: 1, $to: 6, $base: 36, $subtract: 4) {
+  $current: $from;
+  $size: $base;
+  $to: $to + 1;
+
+  @while $current != $to {
+    h#{$current} {
+      @include font-size(($size * .10));
+      @include line-height(($size * .10));
+    }
+
+    $current: $current + 1;
+    $size: $size - $subtract;
+  }
+}
+
+// REMS: Generate fallback for Rem font sizing
+// USAGE: p { @include font-size(1.6); }
+// -----------------------------------------------------------------------------
+@mixin font-size($sizeValue: 1.6){
+  font-size: ($sizeValue * 10) + px;
+  font-size: ($sizeValue / 1.6 ) + rem;
+}
+
+// USAGE: p { @include line-height(1.6); }
+// -----------------------------------------------------------------------------
+@mixin line-height($sizeValue: 1.6){
+  line-height: ($sizeValue * 10) + px;
+  line-height: ($sizeValue / 1.6 ) + rem;
+}
+
+// center alignment
+@mixin center-block {
+  display: block;
+  margin: 0 auto;
+}
+
+// sizing shortcuts
+@mixin size($width: 15px, $height: 5px) {
+  height: $height;
+  width: $width;
+}
+
+@mixin square($size: 5px) {
+  @include size($size, $size);
+}
+
+// input placeholder text
+@mixin placeholder($color: $gray-lighter) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}

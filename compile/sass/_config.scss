@@ -1,0 +1,186 @@
+// =============================================================================
+// TITLE:       Configuration
+// DESCRIPTION: Base variables for the project.
+//
+//  TOC
+//    1. Global
+//    2. Modules
+//      1. Singularity
+//      2. Breakpoint
+// =============================================================================
+// Debugging
+//  * Turn on/off grid
+//  * Turn on/off baseline grid
+$qp_debug: false;
+
+
+// === 1. Global ===============================================================
+// =Typography
+// -----------------------------------------------------------------------------
+$font_base:                     16 !default;
+$line-height_base:              24 !default;
+
+$font_sm:                       14 * 1px !default;
+$font_base_px:                  $font_base * 1px !default;
+$font_md:                       20 * 1px !default;
+$font_lg:                       24 * 1px !default;
+$font_sl:                       30 * 1px !default;
+$font_xl:                       36 * 1px !default;
+$font_xxl:                      38 * 1px !default;
+
+$line-height_base_px:           $line-height_base * 1px !default;
+
+$font_default:                  "Helvetica Neue", sans-serif !default;
+$font_weight_default:           300 !default;
+$font_default_headings:         $font_default;
+
+
+// =Colors
+// -----------------------------------------------------------------------------
+$clr_primary:                   rgb(0,0,0) !default;            // Dark Gray, almost black
+$clr_primary_shadow:            darken($clr_primary, 10%) !default;
+$clr_secondary:                 rgb(39,39,39) !default;          // Base Gray
+$clr_tertiary:                  rgb(137,137,137) !default;       // Light Gray
+
+$clr_accent:                    rgb(255,220,58) !default;        // Yellow
+$clr_accent_shadow:             darken($clr_accent, 20%) !default;
+
+$clr_background:                $clr_tertiary !default;
+
+$clr_ff:                        rgb(239,64,53) !default; // Red
+$clr_ee:                        rgb(65,160,199) !default; // Blue
+$clr_f:                         rgb(145,112,183) !default; // Purple
+$clr_r:                         rgb(255,220,58) !default; // Yellow
+$clr_a:                         rgb(0,171,84) !default; // Green
+
+$clr_highlight:                 #ff9 !default;
+
+$clr_link:                      $clr_ee !default;
+$clr_link_hover:                $clr_f !default;
+$clr_link_active:               $clr_ff !default;
+$clr_link_visited:              $clr_ee !default;
+$clr_link_focus:                $clr_a !default;
+
+// Alerts and buttons
+$clr_alert:                     rgb(218,79,73) !default;
+$clr_error:                     rgb(176,20,0) !default;
+$clr_info:                      rgb(216,220,162) !default;
+$clr_inverse:                   rgb(65,65,65) !default;
+$clr_success:                   rgb(188,212,222) !default;
+$clr_warning:                   $clr_error !default;
+
+// Social Sharing Colors
+$twitter-blue:                  #00bff3 !default;
+$facebook-blue:                 #3b5998 !default;
+$pinterest-red:                 #991020 !default;
+$google-grey:                   #56585b !default;
+
+
+// =Borders & Such
+// -----------------------------------------------------------------------------
+$clr_border:                    $clr_background !default;
+$border_style:                  solid !default;
+$border_width:                  1px !default;
+$border_radius:                 5px !default;
+
+
+// =Spacing
+// -----------------------------------------------------------------------------
+$gutter:                        21px !default;                  // Gutters for modules and such
+$margin_default:                40px !default;                  // Granular control of margins
+$padding_default:               $gutter !default;               // Granular control of padding
+
+$margin_quarter:                $margin_default/4 !default;     // 10px
+$margin_half:                   $margin_default/2 !default;     // 20px
+
+$margin_xxs:                    $margin_default*0.125 !default; // 5px
+$margin_xs:                     $margin_default*0.375 !default; // 15px
+$margin_sm:                     $margin_default*0.625 !default; // 25px
+$margin_md:                     $margin_default*1.25 !default;  // 50px
+$margin_lg:                     $margin_default*1.375 !default; // 55px
+$margin_xl:                     $margin_default*2.25 !default;  // 90px
+$margin_xxl:                    $margin_default*2.75 !default;  // 110px
+
+// =Paths
+// -----------------------------------------------------------------------------
+$img_path:                      '/assets/img/';
+
+
+// === 2. Modules ==============================================================
+// =Veritcal Rhythm Config
+// http://compass-style.org/reference/compass/typography/vertical_rhythm/
+// -----------------------------------------------------------------------------
+$base-font-size:                $font_base_px;
+$base-line-height:              $line-height_base_px;
+$default-rhythm-border-style:   solid;
+$relative-font-sizing:          true;
+$round-to-nearest-half-line:    false;
+$min-line-padding:              2px;
+
+
+// =Breakpoint
+// -----------------------------------------------------------------------------
+// $bp_phone_pt:                   20em !default;   // 320px phone portrait
+// $bp_phone_ls:                   30em !default;   // 480px phone landscape
+// $bp_tablet_sm:                  37.5em !default; // 600px Mini tablet portrait
+// $bp_tablet_sm:                  48em !default; // 600px Mini tablet portrait
+// $bp_tablet:                     48em !default;   // 768px Tablet portrait
+// $bp_desktop:                    60em !default;   // 960px Desktop/Laptop/Tablet landscape
+// $max_site_width:                68.75em !default;   // 1200px page width
+// $max_device_width:              180em !default;  // 2880px Large screen
+
+// $bp_fence_sm:                   $bp_phone_pt ($bp_tablet_sm - .01em); // Breakpoint between phone and small tablet
+// $bp_fence_md:                   $bp_tablet_sm ($bp_desktop - .01em);  // Breakpoint between phone and small tablet
+// $bp_fence_lg:                   $bp_desktop $max_site_width; // Breakpoint between phone and small tablet
+
+// Breakpoint gutters
+// $gutter_default:                (10px / $base-font-size) * 1em; // 10px / 16px = 0.625em
+// $gutter_phone_pt:               (20px / $base-font-size) * 1em; // 20px / 16px = 1.25em
+
+
+// =Singularity Config
+// Set up Breakpoints and related variables
+// https://github.com/Team-Sass/Singularity
+// -----------------------------------------------------------------------------
+// $legacy-support-for-ie6:        false;
+// $legacy-support-for-ie7:        false;
+// $legacy-support-for-ie8:        false;
+// $legacy-support-for-mozilla:    true;
+
+// $breakpoint-to-ems:             true;
+// $mobile-first:                  true;
+// $output:                        'isolation';
+// $direction:                     'ltr';
+// $include-border-box:            false;
+// $include-clearfix:              true;
+
+// $background-grid-color:         #bada55;
+// $breakpoint-no-queries:         false;
+// $breakpoint-no-query-fallbacks: false;
+// $touch:                         pointer coarse, 'no-query' '.touch';
+// $no-queries:                    $bp_desktop, 'no-query' '.no-mq';
+
+// Set the number of grid columns
+// $grids:                         2;
+// $grids:                         add-grid(2 5 2 at $bp_tablet_sm);
+// $grids:                         add-grid(3 7 2 at $bp_desktop);
+
+// Set the width those gutters
+// $gutters:                       $gutter_default;
+// $gutters:                       add-gutter($gutter_phone_pt at $bp_phone_pt);
+
+// Style those gutters
+//$gutter-styles:                 'opposite'; // opposite|split|fixed|split fixed
+
+// Show/hide the grid using the JS method
+// @include grid-toggle;
+
+
+// =Breakpoint Config
+// https://github.com/Team-Sass/breakpoint
+// http://snugug.com/musings/introducing-breakpoint-media-queries-made-easy
+// -----------------------------------------------------------------------------
+// $breakpoint-default-media:      'all';
+// $breakpoint-default-feature:    'min-width';
+// $breakpoint-default-pair:       'width';
+// $device-pixel-ratio:            '1.5';

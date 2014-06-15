@@ -1,0 +1,31 @@
+// =============================================================================
+// TITLE:       Functions
+// DESCRIPTION: Functions used throughout the project.
+// =============================================================================
+
+// Convert px to em
+@function px_to_em($target, $context) {
+  @return ($target / $context) +0em;
+}
+
+// Convert em to px
+@function em_to_px($target, $context) {
+  @return ($target * $context) +0px;
+}
+
+// Unitless numbers
+@function strip_units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// Black opacity
+// background: black(0.15);
+@function black($opacity) {
+    @return rgba(0,0,0,$opacity);
+}
+
+// White opacity
+// background: white(0.80);
+@function white($opacity) {
+    @return rgba(255,255,255,$opacity);
+}

@@ -1,0 +1,32 @@
+SITE:         http://DOMAIN.TLD/
+CLIENT:
+LAUNCH DATE:
+UPGRADED:
+
+DEVELOPER:
+CONTACT:
+EMAIL:
+PHONE:
+
+PLATFORM:
+VERSION:      1.0
+INSTALLED:
+UPGRADED:
+
+For all specific information related to the architecture and development of this website,
+refer to:
+
+  Project "Read Me"
+    ./docs/README.md
+
+  Developer Documentation is located at:
+    ./docs/developer.md
+
+  Frontend documentation is located at:
+    ./docs/frontend.md
+
+  Upgrade Log can be found at:
+    ./docs/upgrade_log.md
+
+  To Do's:
+    ./TODO.md

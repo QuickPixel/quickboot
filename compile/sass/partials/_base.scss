@@ -1,0 +1,252 @@
+// =============================================================================
+// TITLE:       Base
+// DESCRIPTION: Setup project defaults to ensure we get default styling in place.
+//
+//              *** Note that box-sizing: border-box; is built into Toolkit ***
+//              https://github.com/Team-Sass/toolkit#border-box
+// =============================================================================
+
+// === 1. Globals ==============================================================
+// For Compass's Vertical Rhythm
+@include establish-baseline;
+
+
+// =HTML & Body
+// -----------------------------------------------------------------------------
+body {
+  @if $qp_debug == true {
+    @include debug-vertical-alignment();
+  }
+  color: $clr_primary;
+  font: {
+    family: $font_default;
+    weight: $font_weight_default;
+  }
+  background-color: $clr_background;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+
+// =Grouping Content
+// -----------------------------------------------------------------------------
+h1,
+.h-alpha {
+  margin: 0 0 $margin_quarter;
+  color: $clr_primary;
+  font: {
+    size: $font_xxl;
+    family: $font_default_headings;
+    weight: 300;
+  }
+  line-height: 1.315789474;
+}
+
+h2,
+.h-beta {
+  margin: 0 0 $margin_xs;
+  font: {
+    size: $font_xl;
+    family: $font_default_headings;
+    weight: 500;
+  }
+  line-height: 1.166666667;
+}
+
+h3,
+.h-gamma {
+  margin: 0 0 $margin_quarter;
+  font: {
+    size: $font_lg;
+    family: $font_default_headings;
+    weight: 500;
+  }
+  line-height: 1.333333333;
+}
+
+h4,
+.h-delta {
+  margin: $margin_quarter 0;
+  font: {
+    size: $font_md;
+    family: $font_default_headings;
+    weight: 700;
+  }
+  line-height: 1.5;
+}
+
+h5,
+.h-epsilon {
+  margin: 0;
+  font: {
+    size: $font_base_px;
+    family: $font_default_headings;
+    weight: 700;
+  }
+  line-height: 1.5;
+}
+
+h6,
+.h-zeta,
+.prehead {
+  margin-bottom: 0;
+  font: {
+    size: $font_sm;
+    family: $font_default_headings;
+    weight: 700;
+  }
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+ul,
+ol,
+dl,
+table,
+pre,
+hr { clear:both; margin: $margin_default 0; }
+
+p { margin: 0 0 25px 0; }
+
+pre { }
+
+/* Lists */
+ul,
+ol {
+  margin: 0 0 $margin_sm;
+  padding-left: 0;
+  list-style-position: inside;
+
+  ul,
+  ol {
+    margin: $margin_quarter 0;
+    list-style: inherit;
+  }
+
+  li {
+    margin: 0 0 10px 30px;
+    font-size: $font_base_px;
+    line-height: 1.5;
+    list-style-position: outside;
+  }
+
+  > li:last-child { margin-bottom: 0; }
+
+}
+
+li,
+li li,
+li li li {}
+
+dl { }
+dt { font-weight: 700; }
+dd { }
+
+hr {
+  margin: $margin_lg 0;
+  border: 0;
+  height: 1px;
+  background-color: lighten($clr_primary, 50%);;
+}
+hr.space {
+  background-color: transparent;
+}
+
+blockquote {
+  margin: $margin_default 0;
+  padding: ($margin_quarter/2) 0 ($margin_quarter/2) $margin_half;
+  border-left: 1px solid lighten($clr_primary, 50%);;
+
+  cite {
+    display: block;
+    font-size: 90%;
+    color: $clr_primary;
+
+    &:before { content: "\2014 \0020"; }
+  }
+
+  & :last-child { margin-bottom: 0; }
+}
+
+figure {
+
+  img,
+  video,
+  embed { border: 5px solid lighten($clr_primary, 50%);; }
+
+  figcaption {
+    font-size: $font_sm;
+    line-height: 0.833333333;
+  }
+}
+
+
+// =Text-level Semantics
+// -----------------------------------------------------------------------------
+address { }
+
+del { }
+s { }
+
+ins { }
+
+small {
+  font-size: $font_sm;
+  line-height: 0.833333333;
+}
+
+em,
+i { font-style: italic; }
+
+strong,
+b { font-weight: 600; }
+
+cite { }
+q { }
+
+code,
+var,
+samp,
+kbd { font-family: 'Courier New', Courier, monospace; }
+
+sup { }
+sub { }
+
+mark { }
+
+/* Links */
+a {
+  @include link-colors($clr_link, $clr_link_hover, $clr_link_active, $clr_link_visited, $clr_link_focus);
+  border-bottom: 1px solid $clr_link;
+  text-decoration: none;
+
+  &:hover {
+    border-color: $clr_link_hover;
+  }
+
+  &:active {
+    border-color: $clr_link_active;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+a img,
+.fancybox,
+.fancybox-media,
+.fancybox-close { border: none; }
+
+img.float-left { margin-right: 10px; margin-bottom: 10px; }
+img.float-right { margin-left: 10px; margin-bottom: 10px; }
+
+/* Selections */
+::-moz-selection { color: inherit; background-color: $clr_highlight; }
+::selection {color: inherit; background-color: $clr_highlight; }

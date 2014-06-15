@@ -1,0 +1,123 @@
+// =============================================================================
+// TITLE:       Grid Helpers
+// DESCRIPTION: Provides grid helpers and extensions for scaffolding
+// =============================================================================
+
+// .page-header,
+// .page-footer {
+//   @include isolation-span(2, 1, 'both');
+
+//   // BREAKPOINT: 600px and larger
+//   @include breakpoint($bp_tablet_sm) {
+//     @include isolation-span(6, 1, 'both');
+//   }
+
+//   // BREAKPOINT: 960px and larger
+//   @include breakpoint($bp_desktop) {
+//     @include isolation-span(12, 1, 'both');
+//   }
+// }
+
+// .wrapper {
+//   @include isolation-span(2, 1, 'both', $gutter: 0);
+
+//   & :last-child { margin-bottom: 0; }
+
+//   // BREAKPOINT: 600px and larger
+//   @include breakpoint($bp_tablet_sm) {
+//     @include isolation-span(6, 1, 'both', $gutter: 0);
+//   }
+
+//   // BREAKPOINT: 960px and larger
+//   @include breakpoint($bp_desktop) {
+//     @include isolation-span(12, 1, 'both', $gutter: 0);
+//   }
+// }
+
+// .col-1-2 {
+//   @include float-span(1);
+
+//   // BREAKPOINT: 600px and larger
+//   @include breakpoint($bp_tablet_sm) {
+//     @include float-span(3);
+//   }
+
+//   // BREAKPOINT: 960px and larger
+//   @include breakpoint($bp_desktop) {
+//     @include float-span(6);
+//   }
+// }
+
+// .col-1-3 {
+//   @include float-span(2);
+
+//   // BREAKPOINT: 600px and larger
+//   @include breakpoint($bp_tablet_sm) {
+//     @include float-span(2);
+//   }
+
+//   // BREAKPOINT: 960px and larger
+//   @include breakpoint($bp_desktop) {
+//     @include float-span(4);
+//   }
+// }
+
+// .col-1-4 {
+//   @include float-span(1);
+
+//   // BREAKPOINT: 600px and larger
+//   @include breakpoint($bp_tablet_sm) {
+//     @include float-span(3);
+//   }
+
+//   // BREAKPOINT: 960px and larger
+//   @include breakpoint($bp_desktop) {
+//     @include float-span(3);
+//   }
+// }
+
+// .col-1-6 {
+//   @include float-span(1);
+
+//   // BREAKPOINT: 600px and larger
+//   @include breakpoint($bp_tablet_sm) {
+//     @include float-span(1);
+//   }
+
+//   // BREAKPOINT: 960px and larger
+//   @include breakpoint($bp_desktop) {
+//      @include float-span(2);
+//   }
+// }
+
+// .col-1-12 {
+//   @include float-span(2);
+
+//   // BREAKPOINT: 600px and larger
+//   @include breakpoint($bp_tablet_sm) {
+//     @include float-span(6);
+//   }
+
+//   // BREAKPOINT: 960px and larger
+//   @include breakpoint($bp_desktop) {
+//     @include float-span(1);
+//   }
+// }
+
+// [class*='col-']:nth-child(odd) {
+//   @include transition(all 0.3s linear);
+//   background-color: rgba(0, 0, 0, 0.50);
+
+//   &:hover {
+//     background-color: rgba(0, 0, 0, 1.0);
+//   }
+// }
+
+// [class*='col-']:nth-child(even) {
+//   @include transition(all 0.3s linear);
+//   background-color: rgba(255, 255, 255, 0.75);
+
+//   &:hover {
+//     background-color: rgba(255, 255, 255, 1.0);
+//   }
+// }

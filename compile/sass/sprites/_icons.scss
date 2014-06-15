@@ -1,0 +1,25 @@
+// =============================================================================
+// TITLE:       Icons
+// DESCRIPTION: Sprites for category navigation
+//              http://compass-style.org/help/tutorials/spriting/
+// =============================================================================
+
+// === Configuration ===========================================================
+// Setup some Variables
+$ico-layout:            smart; // horizontal|vertical|diagonal|smart
+$ico-spacing:           0px;
+$ico-repeat:            no-repeat; // no-repeat|repeat-x|repeat-y
+$ico-position:          0px; // 100%|50%|0px
+$ico-sprites-dimensions: true; // true|false !Throws an error w/ gulp.js
+// $nav-sprite-base-class: ".sp-nav";
+$ico-clean-up:          true; // true|false
+
+
+
+// === Import the sprites ======================================================
+@import "ico/*.png";
+@include all-ico-sprites;
+
+
+
+// === Styles ==================================================================

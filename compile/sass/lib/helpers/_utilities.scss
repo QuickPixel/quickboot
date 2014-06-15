@@ -1,0 +1,274 @@
+// =============================================================================
+// TITLE:       Utilities
+// DESCRIPTION: Use these classes in the HTML to provide alignment,
+// visual styling, and typography adjustments.
+// =============================================================================
+
+// === Floats/Margins/Padding/Borders/Alignment ================================
+// =Floats
+// -----------------------------------------------------------------------------
+.float-left             { float: left; }
+.float-right            { float: right; }
+
+
+// =Resets
+// -----------------------------------------------------------------------------
+.reset-all            { margin: 0 !important; padding: 0 !important; border: none !important;}
+.reset-margin         { margin: 0 !important; }
+.reset-padding        { padding: 0 !important; }
+.reset-border         { border: none !important; }
+
+
+// =Margins
+// -----------------------------------------------------------------------------
+.margin                 { margin: $margin_default; }
+.m-none                 { margin: 0; }
+.m-top                  { margin-top: $margin_default; }
+.m-right                { margin-right: $margin_default; }
+.m-bot                  { margin-bottom: $margin_default; }
+.m-left                 { margin-left: $margin_default; }
+.m-left-none            { margin-left: 0; }
+
+.m-top-none             { margin-top: 0; }
+.m-top-xxs               { margin-top: $margin_xxs; }  // 5px
+.m-top-xs               { margin-top: $margin_xs; }   // 15px
+.m-top-sm               { margin-top: $margin_sm; }   // 25px
+.m-top-md               { margin-top: $margin_md; }   // 50px
+.m-top-lg               { margin-top: $margin_lg; }   // 55px
+.m-top-xl               { margin-top: $margin_xl; }   // 90px
+.m-top-xxl              { margin-top: $margin_xxl; } // 110px
+
+.m-bot-none             { margin-bottom: 0; }
+.m-bot-xxs              { margin-bottom: $margin_xxs; }  // 5px
+.m-bot-xs               { margin-bottom: $margin_xs; }  // 15px
+.m-bot-sm               { margin-bottom: $margin_sm; }  // 25px
+.m-bot-md               { margin-bottom: $margin_md; }  // 50px
+.m-bot-lg               { margin-bottom: $margin_lg; }  // 55px
+.m-bot-xxl              { margin-bottom: $margin_xxl; } // 110px
+
+.m-lc-none :last-child { margin-bottom: 0; }
+
+
+// =Padding
+// -----------------------------------------------------------------------------
+.padding                { padding: $margin_default; }
+.p-top                  { padding-top: $margin_default; }
+.p-right                { padding-right: $margin_default; }
+.p-bot                  { padding-bottom: $margin_default; }
+.p-left                 { padding-left: $margin_default; }
+
+.p-top-none             { padding-top: 0; }
+.p-top-xs               { padding-top: $margin_xs; }  // 15px
+.p-top-sm               { padding-top: $margin_sm; }  // 25px
+.p-top-md               { padding-top: $margin_md; }  // 50px
+.p-top-lg               { padding-top: $margin_lg; }  // 55px
+.p-top-xl               { padding-top: $margin_xl; }  // 90px
+.p-top-xxl              { padding-top: $margin_xxl; } // 110px
+
+.p-bot-none             { padding-bottom: 0; }
+.p-bot-divider          { padding-bottom: 5px; }
+.p-bot-xs               { padding-bottom: $margin_xs; }  // 15px
+.p-bot-sm               { padding-bottom: $margin_sm; }  // 25px
+.p-bot-md               { padding-bottom: $margin_md; }  // 50px
+.p-bot-lg               { padding-bottom: $margin_lg; }  // 55px
+.p-bot-xl               { padding-bottom: $margin_xl; }  // 90px
+.p-bot-xxl              { padding-bottom: $margin_xxl; } // 110px
+
+.collapse               { margin: 0; }
+.collapse-left          { margin-left: 0;}
+
+// =Text Decoration
+// -----------------------------------------------------------------------------
+.no-decoration          { text-decoration: none; border-bottom: none; }
+.not-bold               { font-weight: 300; }
+
+// =Bullets
+// -----------------------------------------------------------------------------
+ ul.no-bullet             {list-style-type: none; }
+
+
+// =Borders
+// -----------------------------------------------------------------------------
+.border                 { border: 1px solid $clr_lt_gray; }
+.b-top                  { border-top: 1px solid $clr_lt_gray; }
+.b-right                { border-right: 1px solid $clr_lt_gray; }
+.b-bot                  { border-bottom: 1px solid $clr_lt_gray; }
+.b-left                 { border-left: 1px solid $clr_lt_gray; }
+.no-border              { border: none; }
+
+
+// =Alignment
+// -----------------------------------------------------------------------------
+.align-left           { text-align: left; }
+.align-center         { text-align: center; }
+.align-right          { text-align: right; }
+.align-justify        { text-align: justify; }
+
+
+// =Display
+// -----------------------------------------------------------------------------
+.display-block        { display: block; }
+.display-none         { display: none; }
+
+
+// =Page Breaks
+// -----------------------------------------------------------------------------
+.page-break           { page-break-before: always; }
+
+
+// === Colors ==================================================================
+// =Base Colors
+// -----------------------------------------------------------------------------
+// Base Gray
+.c-primary { color: $clr_primary; }
+.bc-primary {background-color: $clr_primary; }
+
+// Teal
+.c-secondary { color: $clr_secondary; }
+.bc-secondary { background-color: $clr_secondary; }
+
+// Blue
+.c-tertiary { color: $clr_tertiary; }
+.bc-tertiary { background-color: $clr_tertiary; }
+
+
+// =Extended Colors
+// -----------------------------------------------------------------------------
+// Orange
+.c-accent { color: $clr_accent; }
+.bc-accent { background-color: $clr_accent; }
+
+
+// =Utility-ish Colors
+// -----------------------------------------------------------------------------
+.c-lt-gray { color: $clr_lt-gray; }
+.bc-lt-gray { background-color: $clr_lt-gray; }
+
+.c-md-gray { color: $clr_md-gray; }
+.bc-md-gray { background-color: $clr_md-gray; }
+
+.c-dk-gray { color: $clr_dk_gray; }
+.bc-dk-gray { background-color: $clr_dk_gray; }
+
+.c-highlight { color: $clr_highlight; }
+.bc-highlight { background-color: $clr_highlight; }
+
+.quiet { color: $clr_lt_gray; }
+.loud { color: $clr_dk_gray; }
+
+.highlight {
+  font-weight: bold;
+  background-color: $clr_highlight;
+}
+
+.added {
+  background: #060;
+  color: #fff;
+}
+.removed {
+  background: #900;
+  color: #fff;
+}
+
+.disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+
+// =Alerts, messages, and such
+// -----------------------------------------------------------------------------
+.error,
+.notice,
+.success {
+  border-width: 2px;
+  border-style: solid;
+  padding: 7px 10px;
+}
+
+.error {
+  border-color: #fbc2c4;
+  color: #8a1f11;
+  background: #fbe3e4;
+}
+.notice {
+  border-color: #ffd324;
+  color: #514721;
+  background: #fff6bf;
+}
+.success {
+  border-color: #c6d880;
+  color: #264409;
+  background: #e6efc2;
+}
+
+/* Links within success, error, & notice boxes */
+a.error,
+.error a { color: #fd4239; }
+a.notice,
+.notice a { color: #514721; }
+a.success,
+.success a { color: #264409; }
+
+
+
+// === Text ====================================================================
+// =Font Helpers
+// -----------------------------------------------------------------------------
+.f-sm { font-size: $font_sm; } // 14px
+.f-bs,
+.f-base { font-size: $font_base_px; } // 16px
+.f-md { font-size: $font_md; } // 20px
+.f-lg { font-size: $font_lg; } // 24px
+.f-sl { font-size: $font_sl; } // 30px
+.f-xl { font-size: $font_xl; } // 36px
+.f-xxl { font-size: $font_xxl; } // 38px
+
+.f-normal { font-weight: 300; }
+.font-bold,
+.f-bold { font-weight: 500; }
+.f-x-bold { font-weight: 700; }
+
+
+// =Grid Helpers
+// -----------------------------------------------------------------------------
+// Adds padding between content rows inside the grid
+.row-grid {
+  overflow: hidden;
+  clear: both;
+  margin: $margin_sm 0;
+}
+
+.grid-thumb {
+  display: block;
+  margin-bottom: $margin_half;
+}
+
+.grid-link {
+  display: block;
+  border: none;
+  font-size: $font_md; // 20px
+  line-height: 1.5; // 30/20 per comp
+}
+
+
+
+// === Effects =================================================================
+// =Inset text
+// -----------------------------------------------------------------------------
+
+
+// =Rounded Corners
+// -----------------------------------------------------------------------------
+// .rounded              { -webkit-border-radius: 12px; -moz-border-radius: 12px; border-radius: 12px; }
+// .r-top-left           { -webkit-border-top-left-radius: 12px; -moz-border-radius-topleft: 12px; border-top-left-radius: 12px; }
+// .r-top-right          { -webkit-border-top-right-radius: 12px; -moz-border-radius-topright: 12px; border-top-right-radius: 12px; }
+// .r-bot-left           { -webkit-border-bottom-left-radius: 12px; -moz-border-radius-bottomleft: 12px; border-bottom-left-radius: 12px; }
+// .r-bot-right          { -webkit-border-bottom-right-radius: 12px; -moz-border-radius-bottomright: 12px; border-bottom-right-radius: 12px; }
+
+// // Drop shadows
+.shadow                  { @include box-shadow(rgba(0, 0, 0, 0.5) 0px -2px  12px 0px); }
+.no-shadow               { @include box-shadow(none); }
+
+/* Cursors */
+.c-pointer            { cursor: pointer; }
