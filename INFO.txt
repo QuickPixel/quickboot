@@ -28,5 +28,8 @@ refer to:
   Upgrade Log can be found at:
     ./docs/upgrade_log.md
 
+  Changelog can be found at:
+    ./docs/changelog.md
+
   To Do's:
     ./TODO.md

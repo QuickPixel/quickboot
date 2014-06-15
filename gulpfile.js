@@ -18,12 +18,12 @@ var gulp              = require( 'gulp' ),
     notify            = require( 'gulp-notify' ),
 
     jade              = require( 'gulp-jade' ),
-    markdown          = require( 'gulp-markdown' ),
+    // markdown          = require( 'gulp-markdown' ),
 
     sass              = require( 'gulp-sass' ),
     compass           = require( 'gulp-compass' ),
     // scsslint          = require( 'gulp-scsslint' ),
-    uncss             = require( 'gulp-uncss' );
+    // uncss             = require( 'gulp-uncss' );
     autoprefixer      = require( 'gulp-autoprefixer' ),
     minifycss         = require( 'gulp-minify-css' ),
 
@@ -34,8 +34,8 @@ var gulp              = require( 'gulp' ),
 
     imagemin          = require( 'gulp-imagemin' ),
     pngcrush          = require( 'imagemin-pngcrush' ),
-    svgmin            = require( 'gulp-svgmin' ),
-    svgSprites        = require( 'gulp-svg-sprites' );
+    svgmin            = require( 'gulp-svgmin' );
+    // svgSprites        = require( 'gulp-svg-sprites' );
 
 
 // Variables
@@ -319,5 +319,5 @@ gulp.task('watch', ['server'], function() {
 // Gulp It™
 // -----------------------------------------------------------------------------
 gulp.task('default', ['clean'], function() {
-  gulp.start('skeleton', 'sass', 'js', 'polyfills', 'jade', 'images', 'svgmin', 'watch');
+  gulp.start('skeleton', 'sass', 'js', 'polyfills', 'jade', 'images', 'svgmin');
 });
