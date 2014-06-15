@@ -11,6 +11,7 @@ Created by [Paulo Elias](https://twitter.com/pauloelias)
 3. [Notes](#notes)
 4. [Gulp Tasks](#tasks)
 5. [To Do](#todo)
+6. [Credits](#credits)
 
 ---
 
@@ -21,7 +22,9 @@ QuickBoot is a frontend scaffold.
 ---
 
 ## <a name="project-setup"></a> Project Setup
-
+* Agree to the .rvmrc request
+* Change the Project name (quickboot) in .rvmrc, close and reopen the terminal window.
+* Agree to the .rvmrc request again
 * Install Node
     * [Node.js Installer](http://nodejs.org/)
 * Install the Gulp
@@ -31,10 +34,11 @@ QuickBoot is a frontend scaffold.
     * ```git clone https://github.com/QuickPixel/quickboot.git && cd quickboot```
 * Install [Bundler](http://bundler.io/)
   * ```gem install bundler```
-* Install ruby gems
+* Install ruby gem deepndencies
     * ```bundle install```
 * Install node modules and bower dependencies
     * ```npm install```
+* Change the Project Name and details in package.json
 * Usage
   * Create project skeleton before you start: ```gulp skeleton```
   * Clean project: ```gulp clean```
@@ -90,7 +94,8 @@ The ```./gulpfile.js``` contains the following tasks:
 | ```gulp js``` |  | Concatenates and minifies javascript | ```./compile/js/app/main.js``` | ```./public/assets/js/main.js``` |
 | ```gulp polyfills``` | | Concatenates and minifies polyfills | ```./compile/js/polyfills/polyfills.js``` | ```./public/assets/js/polyfills.js``` |
 | ```gulp jade``` |  | Compiles jade files to html | ```./compile/jade/**/*.jade``` | ```./public/**/*.html``` |
-| ```gulp images``` |  | Optimizes and moves images into the distribution directory | ```./compile/img/**/*``` | ```./public/assets/img/**/*``` |
+| ```gulp images``` |  | Optimizes and moves images into the distribution directory | ```./compile/img/**/*.{png,gif,jpg,jpeg,ico}``` | ```./public/assets/img/**/*``` |
+| ```gulp svgmin``` |  | Optimizes and moves SVGs into the distribution directory | ```./compile/img/**/*.svg``` | ```./public/assets/img/**/*``` |
 | ```gulp server``` | | Starts the local server with Live Reload enabled | | |
 | ```gulp watch``` | server | Watches changes to files and triggers LiveReload | | |
 
@@ -99,5 +104,22 @@ The ```./gulpfile.js``` contains the following tasks:
 ## <a name="todo"></a> To Do
 
 * Figure out how to only rebuild new or changed files during ```gulp watch```
-* Optimize those SVGs
+* Optimize those SVGs with [SVG sprites](https://github.com/shakyShane/gulp-svg-sprites)
 * Refactor and improve
+* Replass [Compass Sprites](http://compass-style.org/help/tutorials/spriting/) with [css-sprite](https://github.com/aslansky/css-sprite)
+* [FE performnace improvements and optimizations](http://yeoman.io/blog/performance-optimization.html)
+  * [gulp-uncss](https://github.com/ben-eb/gulp-uncss)
+  * Possibly convert images to [WebP](https://github.com/sindresorhus/gulp-webp)
+  * [Build gulp.src() of bower packages main files](https://github.com/ck86/gulp-bower-files)
+  * Compress assets using [gulp-zopfli](https://github.com/romeovs/gulp-zopfli) or [gulp-zip](https://github.com/sindresorhus/gulp-zip)
+
+---
+
+## <a name="credits"></a> Credits
+
+* [Matt Fordham](http://www.matthewfordham.com/) and the guys at [WNTR](http://www.wintr.us/)
+  * [gulp-frontend-scaffold](https://github.com/WINTR/gulp-frontend-scaffold/)
+  * [grunt-frontend-scaffold](https://github.com/WINTR/grunt-frontend-scaffold)
+* [Jake Chapman](http://imjakechapman.com/)
+  * [CraftCMS Boilerplate](https://github.com/imjakechapman/CraftCMS-Boilerplate)
+* [Jon Thomas](https://github.com/wjthomas9)

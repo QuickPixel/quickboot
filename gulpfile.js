@@ -1,7 +1,7 @@
-// ==============================================================================
+// =============================================================================
 // TITLE:       Gulpjs Configuration
 // DESCRIPTION: Project's gulp.js configuration
-// ==============================================================================
+// =============================================================================
 
 // Include gulp
 // -----------------------------------------------------------------------------
@@ -23,6 +23,7 @@ var gulp              = require( 'gulp' ),
     sass              = require( 'gulp-sass' ),
     compass           = require( 'gulp-compass' ),
     // scsslint          = require( 'gulp-scsslint' ),
+    uncss             = require( 'gulp-uncss' );
     autoprefixer      = require( 'gulp-autoprefixer' ),
     minifycss         = require( 'gulp-minify-css' ),
 
@@ -157,6 +158,7 @@ gulp.task('sass', function() {
     .pipe( changed(watch.sass) )
     .pipe( compass(sassConfig) )
     .pipe( autoprefixer('last 2 version','safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4') )
+    // .pipe( uncss({ html: ['public/**/*.html'] }) )
     .pipe( gulp.dest(dist.css) )
     .pipe( gulpif(env === 'production', rename({suffix: '.min'})) )
     .pipe( gulpif(env === 'production', minifycss()) )
@@ -265,7 +267,7 @@ gulp.task('images', function() {
 
 // Optimize SVGs task
 // -----------------------------------------------------------------------------
-gulp.task('svg', function() {
+gulp.task('svgmin', function() {
   return gulp.src( watch.svg )
     .pipe( plumber({ errorHandler: onError }) )
     .pipe( changed(watch.svg) )
@@ -316,5 +318,5 @@ gulp.task('watch', ['server'], function() {
 // Gulp It™
 // -----------------------------------------------------------------------------
 gulp.task('default', ['clean'], function() {
-  gulp.start('skeleton', 'sass', 'js', 'polyfills', 'jade', 'images', 'svg', 'watch');
+  gulp.start('skeleton', 'sass', 'js', 'polyfills', 'jade', 'images', 'svgmin', 'watch');
 });
