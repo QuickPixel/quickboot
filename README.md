@@ -29,20 +29,7 @@ QuickBoot is a frontend scaffold that uses [gulp.js](http://gulpjs.com/) to proc
 
 ---
 
-## <a name="documentation"></a> Detailed Documentation
-
-Detailed documentation can be found at:
-
-* [Frontend Documentation](./docs/frontend.md)
-* [Developer Documentation](./docs/developer.md)
-* [Upgrade Log](./docs/upgrade_log.md)
-* [Change Log](./docs/change_log.md)
-
----
-
 ## <a name="project-setup"></a> Project Setup
-
-### <a name="frontend"></a> Frontend
 
 * Change the **project name** (currently quickboot) in ```.ruby-gemset```. Close and reopen the terminal window.
 * Change the **project name** and **project details** in ```package.json``
@@ -68,31 +55,17 @@ Detailed documentation can be found at:
   * Clean project distribution directory (./public): ```gulp clean```
   * Build for Production to minify and optimize assets: ```NODE_ENV=production gulp```
 
-More details, including a full task list, can be found in the [Frontend Documentation](./docs/frontend.md)
-
-### <a name="backend"></a> Application/Backend
-
-This is just a placeholder for now. Helpful for maintenance when you handoff or need to maintain a CMS/web app.
-
-Full developer documentation can be found in the [Developer Documentation](./docs/developer.md)
-
----
-
 ## <a name="configuration"></a> Configuration
 
-### Frontend Configuration
+TBD.
 
-Detailed frontend configuration documentation can be found in [Frontend Documentation](./docs/frontend.md#configuration)
-
-### Backend Configuration
-
-Detailed backend configuration documentation can be found in [Developer Documentation](./docs/developer#configuration)
+---
 
 ## <a name="notes"></a> Notes
 
 ### Frontend Workflow
 
-Detailed frontend workflow documentation can be found in [Frontend Documentation](./docs/frontend.md#workflow)
+Detailed frontend workflow documentation will be found here.
 
 ### [Node Version Manager (NVM)](https://github.com/creationix/nvm) OPTIONAL
 
@@ -100,7 +73,7 @@ NVM is used to manage multiple active node.js versions, similar to RVM (Ruby Ver
 
 ### Node Modules
 
-Specifics regarding the Node and Gulp modules used in this project are detailed in [Frontend Documentation](./docs/frontend.md#node-modules)
+Specifics regarding the Node and Gulp modules used in this project will be detailed here.
 
 ### [Ruby Version Manager (RVM)](https://rvm.io/) OPTIONAL
 
@@ -108,20 +81,21 @@ RVM is a command-line tool that allows you to install, manage, and work with mul
 
 ### Ruby Gems
 
-Specifics about the Ruby Gems used in this project can be found in [Frontend Documentation](./docs/frontend.md#gems)
+Specifics about the Ruby Gems used in this project will be found here.
 
 ### Bower Components
 
-Information regarding how Bower is configured and its components for this project are found in [Frontend Documentation](./docs/frontend.md#bower)
+Information regarding how Bower is configured and its components for this project will be found here.
 
 ---
 
 ## <a name="todo"></a> To Do
 
 * **Documentation** Finish this damn documentation!
+* Refactor and improve gulp.js file... too many weird path vars right now
 * Figure out how to only rebuild new/changed files during ```gulp watch```
+* Possibly improve file watching with [gulp-watch](https://github.com/floatdrop/gulp-watch)
 * Create SVG sprites using [Gulp SVG Sprites](https://github.com/shakyShane/gulp-svg-sprites)
-* Refactor and improve gulp.js file
 * Replace [Compass Spriting](http://compass-style.org/help/tutorials/spriting/) with [css-sprite](https://github.com/aslansky/css-sprite)
 * [FE performnace improvements and optimizations](http://yeoman.io/blog/performance-optimization.html)
 	* [gulp-uncss](https://github.com/ben-eb/gulp-uncss)
@@ -139,5 +113,3 @@ Information regarding how Bower is configured and its components for this projec
 * [Jake Chapman](http://imjakechapman.com/)
 	* [CraftCMS Boilerplate](https://github.com/imjakechapman/CraftCMS-Boilerplate)
 * [Jon Thomas](https://github.com/wjthomas9)
-* [Focus Lab, LLC](http://focuslabllc.com/)
-	* [Dev Docs](https://github.com/focuslabllc/dev_docs.ee_addon)
