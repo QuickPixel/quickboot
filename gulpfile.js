@@ -248,7 +248,6 @@ gulp.task('images', function() {
     .pipe( plumber({ errorHandler: onError }) )
     .pipe( changed(dist.img) )
     .pipe( cache(imagemin(imgConfig)) )
-    // .pipe( imagemin(imgConfig) )
     .pipe( gulp.dest(dist.img) )
     .pipe( plumber.stop() )
     // .pipe( connect.reload() )

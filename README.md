@@ -9,14 +9,12 @@ Created by [Paulo Elias](https://twitter.com/pauloelias)
 ## Table of Contents
 
 1. [Project Overview](#overview)
-2. [Detailed Documentation](documentation)
-3. [Project Setup](#project-setup)
-    1. [Frontend](#frontend)
-    2. [Application/Backend](#backend)
-4. [Configuration](#configuration)
-5. [Notes](#notes)
-6. [To Do](#todo)
-7. [Credits](#credits)
+2. [Project Setup](#project-setup)
+3. [Configuration](#configuration)
+4. [Notes](#notes)
+5. [To Do](#todo)
+6. [Credits](#credits)
+7. [Changelog](./changelog.md)
 
 ---
 
