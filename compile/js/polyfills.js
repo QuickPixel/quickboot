@@ -7,3 +7,4 @@
 // Using gulp-include:
 // https://www.npmjs.org/package/gulp-include
 // -----------------------------------------------------------------------------
+//= include_tree polyfills

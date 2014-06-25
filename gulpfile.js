@@ -13,7 +13,6 @@ var gulp              = require( 'gulp' ),
     clean             = require( 'gulp-clean' ),
     gutil             = require( 'gulp-util' ),
     plumber           = require( 'gulp-plumber' ),
-    // watch             = require( 'gulp-watch' ),
     rename            = require( 'gulp-rename' ),
     gulpif            = require( 'gulp-if' ),
     connect           = require( 'gulp-connect' ),
@@ -24,6 +23,7 @@ var gulp              = require( 'gulp' ),
 
     sass              = require( 'gulp-sass' ),
     compass           = require( 'gulp-compass' ),
+    sprite            = require( 'css-sprite' ).stream,
     scsslint          = require( 'gulp-scsslint' ),
     uncss             = require( 'gulp-uncss' );
     autoprefixer      = require( 'gulp-autoprefixer' ),
@@ -31,7 +31,7 @@ var gulp              = require( 'gulp' ),
 
     jshint            = require( 'gulp-jshint' ),
     include           = require( 'gulp-include' ),
-    uglify            = require( 'gulp-uglify' ),
+    uglify            = require( 'gulp-uglifyjs' ),
     concat            = require( 'gulp-concat' ),
 
     imagemin          = require( 'gulp-imagemin' ),
@@ -59,7 +59,7 @@ var move = {
 // Files to watch in the "Watch" task
 var watch = {
       sass: sources.srcDir + 'sass/**/*.scss',
-      js: sources.srcDir + 'js/app/**/*.js',
+      js: sources.srcDir + 'js/**/*.js',
       polyfills: sources.srcDir + 'js/polyfills/**/*.js',
       img: sources.srcDir + 'img/**/*.{png,gif,jpg,jpeg,ico}',
       svg: sources.srcDir + 'svg/**/*.svg',
@@ -67,14 +67,20 @@ var watch = {
     };
 
 // JS Sources
-var jsIn  = [ sources.srcDir + 'js/app/main.js' ];
-var polyfillsJsIn = [ sources.srcDir + 'js/polyfills/polyfills.js' ];
+var jsIn  = [
+              sources.srcDir + 'js/mobile-fixes.js',
+              sources.srcDir + 'vendor/modernizr/modernizr.js',
+              sources.srcDir + 'vendor/jquery/dist/jquery.js',
+              sources.srcDir + 'js/app.js'
+            ];
+var polyfillsJsIn = [ sources.srcDir + 'js/polyfills.js'  ];
 
 // DIST
 var dist = {
       css: sources.distDir + 'assets/css',
       js:  sources.distDir + 'assets/js',
       img: sources.distDir + 'assets/img',
+      sprites: sources.distDir + 'assets/img/sprites',
       svg: sources.distDir + 'assets/svg',
       html: sources.distDir
     }
@@ -117,7 +123,6 @@ gulp.task( 'skeleton', function() {
 gulp.task('sass', function() {
   // Set the Compass config variable
   var sassConfig = {
-    // config_file: './config.rb',
     style: 'expanded', // nested|expanded|compact|compressed
     comments: false,
     relative: true,
@@ -147,8 +152,10 @@ gulp.task('sass', function() {
     .pipe( plumber({ errorHandler: onError }) )
     .pipe( changed(dist.css) )
     .pipe( compass(sassConfig) )
+    // .pipe( uncss({
+    //   html: [ dist.html + 'index.html' ]
+    // }) )
     .pipe( autoprefixer('last 2 version','safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4') )
-    // .pipe( uncss({ html: ['public/**/*.html'] }) )
     .pipe( gulp.dest(dist.css) )
     .pipe( gulpif(env === 'production', rename({suffix: '.min'})) )
     .pipe( gulpif(env === 'production', minifycss()) )
@@ -161,32 +168,45 @@ gulp.task('sass', function() {
 
 // JavaScript tasks
 // -----------------------------------------------------------------------------
+// Set the Uglify config variable
+// https://www.npmjs.org/package/gulp-uglifyjs
+var uglifyConfig = {
+  basePath: sources.distDir + 'assets/js/',
+  outSourceMap: false,
+  mangle: true,
+  compress: true
+};
+
+if ( env === 'development' ) {
+  uglifyConfig.outSourceMap = true;
+  uglifyConfig.mangle = false;
+  uglifyConfig.compress = false;
+}
+
 gulp.task( 'js', function() {
   return gulp.src( jsIn )
     .pipe( plumber({ errorHandler: onError }) )
-    .pipe( changed(dist.js) )
-    .pipe( include() )
+    // .pipe( changed(dist.js) )
+    .pipe( uglify('app.js', uglifyConfig) )
     .pipe( gulp.dest(dist.js) )
-    .pipe( gulpif(env === 'production', rename({suffix: '.min'})) )
-    .pipe( gulpif(env === 'production', uglify()) )
+    .pipe( gulpif(env === 'production', uglify('app.min.js', uglifyConfig)) )
     .pipe( gulpif(env === 'production', gulp.dest(dist.js)) )
     .pipe( plumber.stop() )
     .pipe( connect.reload() )
-    .pipe( notify({ message: 'Main.js task complete' }) );
+    .pipe( notify({ message: 'app.js task complete' }) );
 });
 
 gulp.task( 'polyfills', function() {
   return gulp.src( polyfillsJsIn )
     .pipe( plumber({ errorHandler: onError }) )
-    .pipe( changed(dist.js) )
-    .pipe( include() )
+    // .pipe( changed(dist.js) )
+    .pipe( uglify('polyfills.js', uglifyConfig) )
     .pipe( gulp.dest(dist.js) )
-    .pipe( gulpif(env === 'production', rename({suffix: '.min'})) )
-    .pipe( gulpif(env === 'production', uglify()) )
+    .pipe( gulpif(env === 'production', uglify('polyfills.min.js', uglifyConfig)) )
     .pipe( gulpif(env === 'production', gulp.dest(dist.js)) )
     .pipe( plumber.stop() )
     .pipe( connect.reload() )
-    .pipe( notify({ message: 'Polyfills.js task complete' }) );
+    .pipe( notify({ message: 'polyfills.js task complete' }) );
 });
 
 
@@ -253,6 +273,22 @@ gulp.task('images', function() {
     // .pipe( connect.reload() )
     .pipe(notify({ message: 'Image optimization task complete' }));
 });
+
+
+// Image sprites task
+// -----------------------------------------------------------------------------
+// generate sprite.png and _sprite.scss
+// gulp.task('sprites', function () {
+//   return gulp.src('./src/img/*.png')
+//     .pipe(sprite({
+//       name: 'sprite.png',
+//       style: '_sprite.scss',
+//       cssPath: './img',
+//       processor: 'scss'
+//     }))
+//     .pipe(gulpif('*.png', gulp.dest('./dist/img/')))
+//     .pipe(gulpif('*.scss', gulp.dest('./dist/scss/')));
+// });
 
 
 // Optimize SVGs task

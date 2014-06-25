@@ -7,6 +7,7 @@
     "postinstall": "bower install"
   },
   "devDependencies": {
+    "css-sprite": "^0.7.0-beta3",
     "gulp": "^3.6.2",
     "gulp-autoprefixer": "0.0.7",
     "gulp-cache": "^0.1.11",
@@ -30,7 +31,7 @@
     "gulp-scsslint": "0.0.4",
     "gulp-svg-sprites": "^0.1.2",
     "gulp-svgmin": "^0.4.6",
-    "gulp-uglify": "^0.3.0",
+    "gulp-uglifyjs": "^0.3.0",
     "gulp-uncss": "^0.4.4",
     "gulp-util": "^2.2.14",
     "gulp-watch": "^0.6.6",

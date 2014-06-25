@@ -3,7 +3,6 @@
 
 /* TEAM */
     Lead: Paulo Elias
-    Contact: hello [at] wearequickpixel.com
     Twitter: @pauloelias
     From: San Francisco, CA, US
 
@@ -13,7 +12,7 @@
 #    From:
 
 /* SITE */
-    Last update: 2014/06/14
+    Last update: 2014/06/24
     Language: English
     Doctype: HTML5
     IDE: Sublime Text
